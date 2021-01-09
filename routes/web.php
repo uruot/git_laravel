@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+Route::get('/drills/new', 'DrillsController@new')->name('drills.new');
