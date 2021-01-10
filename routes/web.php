@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::get('/drills/new', 'DrillsController@new')->name('drills.new');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
