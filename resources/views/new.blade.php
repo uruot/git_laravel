@@ -1,38 +1,99 @@
-<body>
-    <?php
-    $val = 1;
-    ?>
+@extends('layouts.app')
 
-    <?php if ($val === 1): ?>
-    <div>処理１がtrueの場合にこれが表示</div>
-    <?php elseif ($val === 2): ?>
-    <div>elseifがtrueの場合にこれが表示</div>
-    <?php endif; ?>
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Drill Register') }}</div>
 
-    <?php if(empty($val)): ?>
-    <div>emptyがtrueならこれが表示</div>
-    <?php endif; ?>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('drills.new') }}">
+                            @csrf
 
-    <?php if(isset($val)): ?>
-    <div>issetがtrueならこれが表示</div>
-    <?php endif; ?>
+                            <div class="form-group row">
+                                <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>
 
-    <?php if ($val === 1){ ?>
-        <?php if(empty($val)){ ?>
-            <div>emptyがtrueならこれが表示</div>
-            <?php if(isset($val)){ ?>
-                <div>issetがtrueならこれが表示</div>
-            <?php } ?>
-        <?php } ?>
-    <?php }elseif ($val === 2){ ?>
-        <div>elseifがtrueの場合にこれが表示</div>
-    <?php } ?>
+                                <div class="col-md-6">
+                                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
 
-    <?php
-    $items = ['あいうえお', 'かきくけこ', 'さしすせそ'];
-    ?>
+                                    @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
 
-    <?php foreach ($items as $item): ?>
-    <li><?php echo $item; ?></li>
-    <?php endforeach; ?>
-</body>
+                            <div class="form-group row">
+                                <label for="category_name" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="category_name" type="text" class="form-control @error('category_name') is-invalid @enderror" name="category_name" value="{{ old('category_name') }}" autocomplete="category_name" autofocus>
+
+                                    @error('category_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="problem0" class="col-md-4 col-form-label text-md-right">{{ __('Problem').'1' }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="problem0" type="text" class="form-control @error('problem0') is-invalid @enderror" name="problem0" value="{{ old('problem0') }}" autocomplete="problem0" autofocus>
+
+                                    @error('problem0')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="problem1" class="col-md-4 col-form-label text-md-right">{{ __('Problem').'2' }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="problem1" type="text" class="form-control @error('problem1') is-invalid @enderror" name="problem1" value="{{ old('problem1') }}" autocomplete="problem1" autofocus>
+
+                                    @error('problem1')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="problem2" class="col-md-4 col-form-label text-md-right">{{ __('Problem').'3' }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="problem2" type="text" class="form-control @error('problem2') is-invalid @enderror" name="problem2" value="{{ old('problem2') }}" autocomplete="problem0" autofocus>
+
+                                    @error('problem2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
