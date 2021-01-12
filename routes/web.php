@@ -17,13 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 Route::get('/drills/new', 'DrillsController@new')->name('drills.new');
+
+Auth::routes();
 Route::get('/drills', 'DrillsController@create')->name('drills.create');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
