@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('/drills/new', 'DrillsController@new')->name('drills.new');
-
+Route::post('/drills', 'DrillsController@create')->name('drills.create');
 Auth::routes();
 Route::get('/drills', 'DrillsController@create')->name('drills.create');
 

@@ -10,7 +10,7 @@ class DrillsController extends Controller
   {
       return view('drills.new');
   }
-}
+
 
 public function create(Request $request)
   {
