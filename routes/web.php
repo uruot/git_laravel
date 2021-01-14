@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::get('/drills/new', 'DrillsController@new')->name('drills.new');
 Route::post('/drills', 'DrillsController@create')->name('drills.create');
 Route::get('/drills', 'DrillsController@index')->name('drills');
+Route::post('/drills/{id}', 'DrillsController@update')->name('drills.update');
+Route::post('/drills/{id}/delete', 'DrillsController@destroy')->name('drills.delete');
 Auth::routes();
 Route::get('/drills', 'DrillsController@create')->name('drills.create');
 
