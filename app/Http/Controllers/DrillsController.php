@@ -11,6 +11,11 @@ class DrillsController extends Controller
         return view('drills.index', ['drills' => $drills]);
     }
 
+    public function mypage(){
+    $drills = Auth::user()->drills()->get();
+    return view('drills.mypage', compact('drills'));
+}
+
   public function new()
   {
       return view('drills.new');

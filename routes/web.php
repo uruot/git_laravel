@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/drills/new', 'DrillsController@new')->name('drills.new');
 Route::post('/drills', 'DrillsController@create')->name('drills.create');
 Route::get('/drills', 'DrillsController@index')->name('drills');
