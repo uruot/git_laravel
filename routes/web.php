@@ -23,6 +23,9 @@ Route::get('/drills', 'DrillsController@index')->name('drills');
 Route::post('/drills/{id}', 'DrillsController@update')->name('drills.update');
 Route::post('/drills/{id}/delete', 'DrillsController@destroy')->name('drills.delete');
 Route::get('/mypage', 'DrillsController@mypage')->name('drills.mypage');
+Route::get('/mypage', 'DrillsController@mypage')->name('drills.mypage')->middleware('auth');
+
+});
 
 Auth::routes();
 
