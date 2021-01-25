@@ -50,4 +50,4 @@ public function destroy($id)
     Drill::find($id)->delete();
 
     return redirect('/drills')->with('flash_message', __('Deleted.'));
-}
+};

@@ -14,7 +14,7 @@ class Drill extends Model
 // モデルがその属性以外を持たなくなる（fillメソッドに対応しやすいが、カラムが増えるほど足していく必要あり）
 protected $fillable = ['title', 'category_name', 'problem0', 'problem1', 'problem2', 'problem3', 'problem4', 'problem5', 'problem6', 'problem7', 'problem8', 'problem9'];
 // モデルからその属性が取り除かれる（カラムが増えてもほとんど変更しなくて良い）
-protected $guarded = ['id'];
+//protected $guarded = ['id'];
 
 public function user()
 {
