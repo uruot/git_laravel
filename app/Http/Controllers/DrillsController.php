@@ -39,7 +39,9 @@ public function create(Request $request)
 
        // fillを使って一気にいれるか
        // $fillableを使っていないと変なデータが入り込んだ場合に勝手にDBが更新されてしまうので注意！
-       $drill->fill($request->all())->save();
+//       $drill->fill($request->all())->save();
+
+       Auth::user()->drills()->save($drill->fill($request->all()));
 
        // リダイレクトする
        // その時にsessionフラッシュにメッセージを入れる

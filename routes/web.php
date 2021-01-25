@@ -22,7 +22,10 @@ Route::post('/drills', 'DrillsController@create')->name('drills.create');
 Route::get('/drills', 'DrillsController@index')->name('drills');
 Route::post('/drills/{id}', 'DrillsController@update')->name('drills.update');
 Route::post('/drills/{id}/delete', 'DrillsController@destroy')->name('drills.delete');
+Route::get('/mypage', 'DrillsController@mypage')->name('drills.mypage');
+
 Auth::routes();
+
 Route::get('/drills', 'DrillsController@create')->name('drills.create');
 
 
